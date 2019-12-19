@@ -56,14 +56,14 @@
 			}
 			else
 			{
-				$nbcomm=mysqli_num_rows($res); // Retourne le nombre de lignes dans un résultat. 
-				$nbpages=ceil($nbcomm/$commparpage); /*Ceil arrondit a l'entier supérieur*/
+				$nbcomm=mysqli_num_rows($res); // Retourne le nombre de lignes dans un rï¿½sultat. 
+				$nbpages=ceil($nbcomm/$commparpage); /*Ceil arrondit a l'entier supï¿½rieur*/
 				echo "<br> Pages : ";
 				echo "<a href='commentaires.php?page=1'> << </a>";
 				echo "<a href='commentaires.php?page=".($page-1)."'> < </a>";
 				for($i=($page-2);$i<=($page+2);$i++)
 				{
-					echo "<a href='commentaires.php?page=$i'> $i </a>";
+					if ($i>= 1&&$i<=$nbpages)echo "<a href='commentaires.php?page=$i'> $i </a>";
 				}
 			}
 			echo "<a href='commentaires.php?page=".($page+1)."'> > </a>";
